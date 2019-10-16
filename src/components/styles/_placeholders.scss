@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use './settings';
+$button-settings: module-variables(settings);
+
+%btn-common {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 1;
+  font-family: map.get($button-settings, btn-font-family);
+  font-size: map.get($button-settings, btn-font-size);
+  font-weight: map.get($button-settings, btn-font-weight);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: map.get($button-settings, btn-padding-vertical)
+    map.get($button-settings, btn-padding-horizontal);
+  margin-right: map.get($button-settings, btn-margin-bottom);
+  outline: none;
+  border: map.get($button-settings, btn-border-size) solid transparent;
+  border-radius: map.get($button-settings, btn-radius);
+  transition: all, 0.4s, ease-out;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: map.get($button-settings, btn-dark-blue);
+    text-decoration: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+  &::-moz-focus-inner {
+    border: none;
+  }
+}

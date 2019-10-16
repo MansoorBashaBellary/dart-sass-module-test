@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use './' as *;
+
+////
+/// Default styles for buttons.
+///
+/// @group button
+////
+.btn {
+
+  @extend %btn-common;
+
+  // Default button
+  &--default {
+    background-color: map.get($btn-settings, btn-white);
+    color: map.get($btn-settings, btn-default-blue);
+    border: map.get($btn-settings, btn-border-size) solid
+      map.get($btn-settings, btn-default-blue);
+
+    &:hover,
+    &:focus {
+      background-color: map.get($btn-settings, btn-hover-blue);
+      color: map.get($btn-settings, btn-default-blue);
+    }
+
+    &:active,
+    &--active {
+      background-color: map.get($btn-settings, btn-white);
+      color: map.get($btn-settings, btn-default-blue);
+      cursor: default;
+    }
+  }
+}

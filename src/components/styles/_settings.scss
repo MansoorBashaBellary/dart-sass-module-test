@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+////
+/// Setting and variables for configuring button styles.
+///
+/// @group button
+////
+
+$btn-font-family: 'Roboto', 'Franklin Gothic Medium', Tahoma, sans-serif !default;
+$btn-radius: 4px !default;
+$btn-border-size: 1px !default;
+$btn-font-size: 18px !default;
+$btn-font-weight: 500 !default;
+$btn-padding-vertical: 14px !default;
+$btn-padding-horizontal: 35px !default;
+$btn-margin-bottom: 15px !default;
+$btn-dark-blue: #04112a !default;

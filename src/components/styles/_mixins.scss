@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use './settings';
+$component-settings: module-variables(settings);
+
+@mixin button-generate-arrow($direction) {
+  $direction_data: map.get(
+    map.get($component-settings, btn-arrow-sizes),
+    $direction
+  );
+  $size: map.get($direction_data, icon);
+  $image: map.get($direction_data, image);
+  $direction: map.get($direction_data, direction);
+
+  content: "";
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background: url("#{$image}")
+    no-repeat $direction top/5px 9px map.get($component-settings, btn-white);
+}
+
+@mixin button-generate-gradient($start, $end) {
+  background: $start linear-gradient(
+    to bottom,
+    $start,
+    $end
+  );
+}
